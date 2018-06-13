@@ -45,10 +45,14 @@
   text-transform: uppercase;
   padding: 1.8rem 3rem;
   cursor: pointer;
-  transition: .2s;
+  transition: .1s;
   
   &:hover {
     background-color: $color-primary-dark;
+  }
+  
+  &:active {
+    background-color: darken($color-primary-dark, 10%);
   }
 }
 
