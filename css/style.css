@@ -6,6 +6,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 78.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -78,6 +81,10 @@ body {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end content-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [content-end]; }
+  @media only screen and (max-width: 63.5em) {
+    .container {
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-columns: [content-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [content-end]; } }
 
 .sidebar {
   background-color: #c69963;
@@ -85,6 +92,11 @@ body {
   grid-row: 1 / -1;
   display: flex;
   justify-content: center; }
+  @media only screen and (max-width: 63.5em) {
+    .sidebar {
+      grid-area: 1 / 1 / 2 / -1;
+      justify-content: flex-end;
+      align-items: center; } }
 
 .nav-btn {
   border: none;
@@ -103,6 +115,14 @@ body {
     transform: translateY(-1.5rem); }
   .nav-btn::after {
     transform: translateY(1.3rem); }
+  @media only screen and (max-width: 63.5em) {
+    .nav-btn {
+      margin-right: 2rem;
+      margin-top: 0; }
+      .nav-btn::before {
+        transform: translateY(-1.2rem); }
+      .nav-btn::after {
+        transform: translateY(1rem); } }
 
 .header {
   background-color: #54483A;
@@ -113,8 +133,8 @@ body {
   padding: 8rem;
   padding-top: 4rem;
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center; }
   .header__logo {
@@ -136,12 +156,14 @@ body {
       height: 1px;
       background-color: currentColor; }
   .header__seenon-logos {
-    display: flex;
-    justify-content: center; }
-    .header__seenon-logos img:not(:last-child) {
-      margin-right: 4rem; }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+    justify-items: center;
+    align-items: center; }
     .header__seenon-logos img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(70%); }
 
 .realtors {
@@ -325,6 +347,9 @@ body {
   background-color: #101d2c;
   grid-column: content-start / content-end;
   padding: 8rem; }
+  @media only screen and (max-width: 63.5em) {
+    .footer {
+      padding: 4rem; } }
 
 .nav {
   list-style: none;
@@ -332,6 +357,10 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 2rem;
   align-items: center; }
+  @media only screen and (max-width: 63.5em) {
+    .nav {
+      max-width: 65rem;
+      margin: 0 auto; } }
   .nav__link:link, .nav__link:visited {
     font-size: 1.4rem;
     color: white;
@@ -355,3 +384,6 @@ body {
   margin: 6rem auto 0;
   text-align: center;
   width: 70%; }
+  @media only screen and (max-width: 63.5em) {
+    .copyright {
+      margin: 3rem auto 0; } }

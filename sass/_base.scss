@@ -16,6 +16,18 @@ $color-liked: #bf5656;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+// RESPONSIVE BREAKPOINTS
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 78.75em) { @content } // 1200px
+  }
+  
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 63.5em) { @content } // 1000px
+  }
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -25,6 +37,10 @@ $font-display: 'Josefin Sans', sans-serif;
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px;
+  
+  @include respond(laptop) {
+    font-size: 50%;
+  }
 }
 
 body {

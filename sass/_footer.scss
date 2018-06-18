@@ -2,10 +2,19 @@
   background-color: $color-secondary;
   grid-column: content-start / content-end;
   padding: 8rem;
+  
+  @include respond(tablet) {
+    padding: 4rem;
+  }
 }
 
 .nav {
   list-style: none;
+  
+  @include respond(tablet) {
+    max-width: 65rem;
+    margin: 0 auto;
+  }
   
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -41,4 +50,8 @@
   margin: 6rem auto 0;
   text-align: center;
   width: 70%;
+  
+  @include respond(tablet) {
+    margin: 3rem auto 0;
+  }
 }
