@@ -3,6 +3,14 @@
   grid-column: col-start 7 / content-end;
   padding: 3rem;
   
+  @include respond(phone-land) {
+    grid-column: 1 / -1;
+  }
+  
+  @include respond(phone) {
+    display: none;
+  }
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +22,10 @@
     grid-column-gap: 2rem;
     grid-row-gap: 5vh;
     align-items: center;
+    
+    @include respond(phone-land) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
   }
   
   &__img {
@@ -23,8 +35,14 @@
   }
   
   &__sold {
-    text-transform: uppercase;
+    text-transform: uppercase;  
     color: $color-grey-light-2;
     margin-top: -3px;
+  }
+  
+  @include respond(phone-land) {
+    &__heading {
+      display: none;
+    }
   }
 }

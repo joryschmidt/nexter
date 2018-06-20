@@ -20,6 +20,10 @@
   font-style: italic;
   line-height: 1;
   
+  @include respond(phone) {
+    font-size: 3rem;
+  }
+  
   &--light { color: $color-grey-light-1; }
   &--dark { color: $color-grey-dark-1; }
 }
@@ -52,6 +56,7 @@
   padding: 1.8rem 3rem;
   cursor: pointer;
   transition: .1s;
+  z-index: 2;
   
   &:hover {
     background-color: $color-primary-dark;
@@ -67,6 +72,14 @@
 }
 
 .u-mb-sm { margin-bottom: 2rem; }
-.u-mb-md { margin-bottom: 3rem; }
+
+.u-mb-md { 
+  margin-bottom: 3rem; 
+  
+  @include respond(phone) {
+    margin-bottom: 2rem; 
+  }
+}
+
 .u-mb-lg { margin-bottom: 4rem; }
 .u-mb-hg { margin-bottom: 8rem; }

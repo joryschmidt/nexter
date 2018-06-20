@@ -9,6 +9,9 @@ html {
   @media only screen and (max-width: 78.75em) {
     html {
       font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 44%; } }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -29,6 +32,9 @@ body {
   font-size: 4rem;
   font-style: italic;
   line-height: 1; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 3rem; } }
   .heading-secondary--light {
     color: #f9f7f6; }
   .heading-secondary--dark {
@@ -56,7 +62,8 @@ body {
   text-transform: uppercase;
   padding: 1.8rem 3rem;
   cursor: pointer;
-  transition: .1s; }
+  transition: .1s;
+  z-index: 2; }
   .btn:hover {
     background-color: #B28451; }
   .btn:active {
@@ -70,6 +77,9 @@ body {
 
 .u-mb-md {
   margin-bottom: 3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .u-mb-md {
+      margin-bottom: 2rem; } }
 
 .u-mb-lg {
   margin-bottom: 4rem; }
@@ -85,6 +95,12 @@ body {
     .container {
       grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
       grid-template-columns: [content-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [content-end]; } }
+  @media only screen and (max-width: 50em) {
+    .container {
+      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content); } }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 60vw repeat(3, min-content); } }
 
 .sidebar {
   background-color: #c69963;
@@ -137,6 +153,9 @@ body {
   grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center; }
+  @media only screen and (max-width: 50em) {
+    .header {
+      grid-column: 1 / -1; } }
   .header__logo {
     height: 3rem;
     justify-self: center; }
@@ -174,12 +193,21 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  @media only screen and (max-width: 50em) {
+    .realtors {
+      grid-column: 1 / -1; } }
+  @media only screen and (max-width: 37.5em) {
+    .realtors {
+      display: none; } }
   .realtors__list {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-column-gap: 2rem;
     grid-row-gap: 5vh;
     align-items: center; }
+    @media only screen and (max-width: 50em) {
+      .realtors__list {
+        grid-template-columns: repeat(3, min-content max-content); } }
   .realtors__img {
     width: 7rem;
     border-radius: 50%;
@@ -188,6 +216,9 @@ body {
     text-transform: uppercase;
     color: #aaa;
     margin-top: -3px; }
+  @media only screen and (max-width: 50em) {
+    .realtors__heading {
+      display: none; } }
 
 .features {
   grid-column: center-start / center-end;
@@ -197,6 +228,10 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 6rem;
   align-items: start; }
+  @media only screen and (max-width: 50em) {
+    .features {
+      margin-top: 10rem;
+      margin-bottom: 5rem; } }
 
 .feature {
   display: grid;
@@ -220,6 +255,15 @@ body {
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(6, 1fr);
   align-items: center; }
+  @media only screen and (max-width: 50em) {
+    .story__pictures {
+      background-image: linear-gradient(white, white);
+      display: flex;
+      width: 100vw;
+      height: 120%; } }
+  @media only screen and (max-width: 37.5em) {
+    .story__pictures {
+      height: 100%; } }
 
 .story__image--1 {
   width: 100%;
@@ -234,6 +278,14 @@ body {
   grid-column: 4 / 7;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
 
+@media only screen and (max-width: 50em) {
+  .story__image--1 {
+    flex: 1.333333;
+    width: 0; }
+  .story__image--2 {
+    flex: 1.818181;
+    width: 0; } }
+
 .story__content {
   background-color: #f9f7f6;
   grid-column: col-start 5 / content-end;
@@ -242,6 +294,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; }
+  @media only screen and (max-width: 56.25em) {
+    .story__content {
+      padding: 3rem 8vw; } }
+  @media only screen and (max-width: 50em) {
+    .story__content {
+      grid-column: 1 / -1; } }
 
 .story__text {
   font-size: 1.5rem;
@@ -254,10 +312,13 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 7rem; }
+  @media only screen and (max-width: 50em) {
+    .homes {
+      margin: 5rem 0; } }
   .homes .home {
     background-color: #f9f7f6;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(max-content, 1fr));
     grid-row-gap: 3.5rem; }
     .homes .home__img {
       width: 100%;
@@ -298,6 +359,9 @@ body {
         height: 2rem;
         width: 2rem;
         margin-right: 1rem; }
+    @media only screen and (max-width: 56.25em) {
+      .homes .home__rooms, .homes .home__price {
+        margin-left: 1rem; } }
     .homes .home__btn {
       grid-column: 1 / -1; }
 

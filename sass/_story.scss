@@ -9,6 +9,17 @@
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr);
     align-items: center;
+    
+    @include respond(phone-land) {
+      background-image: linear-gradient(white, white);
+      display: flex;
+      width: 100vw;
+      height: 120%;
+    }
+    
+    @include respond(phone) {
+      height: 100%;
+    }
   }
   
   &__image {
@@ -27,6 +38,18 @@
       grid-column: 4 / 7;
       box-shadow: 0 2rem 5rem rgba(black, .2);
     }
+    
+    @include respond(phone-land) {
+      &--1 { 
+        flex: 1.333333; 
+        width: 0;
+      }
+      
+      &--2 { 
+        flex: 1.818181;
+        width: 0;
+      }
+    }
   }
   
   &__content {
@@ -39,6 +62,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    
+    @include respond(tab-port) {
+      padding: 3rem 8vw;
+    }
+    
+    @include respond(phone-land) {
+      grid-column: 1 / -1;
+    }
   }
   
   &__text {

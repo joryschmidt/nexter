@@ -26,6 +26,18 @@ $font-display: 'Josefin Sans', sans-serif;
   @if $breakpoint == tablet {
     @media only screen and (max-width: 63.5em) { @content } // 1000px
   }
+  
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) { @content } // 900px
+  }
+  
+  @if $breakpoint == phone-land {
+    @media only screen and (max-width: 50em) { @content } // 800px
+  }
+  
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content } // 600px
+  }
 }
 
 *, *::before, *::after {
@@ -39,7 +51,11 @@ html {
   font-size: 62.5%; // 1rem = 10px;
   
   @include respond(laptop) {
-    font-size: 50%;
+    font-size: 50%; // 8px
+  }
+  
+  @include respond(phone) {
+    font-size: 44%; // 7px
   }
 }
 

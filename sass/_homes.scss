@@ -2,6 +2,10 @@
   grid-column: center-start / center-end;
   margin: 15rem 0;
   
+  @include respond(phone-land) {
+    margin: 5rem 0;
+  }
+  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 7rem;
@@ -10,7 +14,7 @@
     background-color: $color-grey-light-1;
     
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(max-content, 1fr));
     grid-row-gap: 3.5rem;
     
     &__img {
@@ -56,6 +60,7 @@
       font-size: 1.5rem;
       margin-left: 2rem;
       
+      
       display: flex;
       align-items: center;
       
@@ -64,6 +69,13 @@
         height: 2rem;
         width: 2rem;
         margin-right: 1rem;
+      }
+    }
+    
+    &__rooms, &__price {
+      
+      @include respond(tab-port) {
+        margin-left: 1rem;
       }
     }
     
