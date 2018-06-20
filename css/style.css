@@ -97,10 +97,7 @@ body {
       grid-template-columns: [content-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [content-end]; } }
   @media only screen and (max-width: 50em) {
     .container {
-      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content); } }
-  @media only screen and (max-width: 37.5em) {
-    .container {
-      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 60vw repeat(3, min-content); } }
+      grid-template-rows: 6rem calc(100vh - 6rem); } }
 
 .sidebar {
   background-color: #c69963;
@@ -156,6 +153,9 @@ body {
   @media only screen and (max-width: 50em) {
     .header {
       grid-column: 1 / -1; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      padding: 5rem; } }
   .header__logo {
     height: 3rem;
     justify-self: center; }
@@ -232,6 +232,9 @@ body {
     .features {
       margin-top: 10rem;
       margin-bottom: 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .features {
+      margin-top: 8rem; } }
 
 .feature {
   display: grid;
@@ -259,11 +262,7 @@ body {
     .story__pictures {
       background-image: linear-gradient(white, white);
       display: flex;
-      width: 100vw;
-      height: 120%; } }
-  @media only screen and (max-width: 37.5em) {
-    .story__pictures {
-      height: 100%; } }
+      width: 100vw; } }
 
 .story__image--1 {
   width: 100%;

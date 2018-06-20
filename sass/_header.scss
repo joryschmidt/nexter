@@ -17,6 +17,10 @@
     grid-column: 1 / -1;
   }
   
+  @include respond(phone) {
+    padding: 5rem;
+  }
+  
   
   &__logo {
     height: 3rem;
